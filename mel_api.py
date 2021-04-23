@@ -9,8 +9,11 @@ app = Flask(__name__)
 def index():
     json_incoming_data = json.loads(request.get_data().decode('utf-8'))
     print('json_incoming_data: ', json_incoming_data)
+    foo_mssg = foo()
+    return(foo_mssg)
 
-    return('hihi - this is the output of a function call')
+def foo():
+    return 'hihi - this is the output of a function call'
 
 if __name__ == '__main__':
     print('\n', '*'*5, f'Open Insomnia and hit localhost at 0.0.0.0:5000', '*'*5, '\n')
